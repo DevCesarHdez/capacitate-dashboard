@@ -1,0 +1,122 @@
+.card-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .card-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .card-layout {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    @include shadow;
+
+    border-radius: 8px;
+    background-color: $primary;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    .tag {
+        @include shadow;
+        position: absolute;
+        top: 0;
+        right: 1.2em;
+        font-size: .8em;
+        color: $primary;
+        background-color: $light;
+        padding: .6em .8em .3em;
+        border-radius: 0 0 4px 4px;
+        cursor: pointer;
+    }
+
+    .body {
+        margin-top: 2.5em;
+        position: relative;
+        padding: 1em;
+        background-color: $light;
+        border-radius: 4px 4px 0 0;
+
+        .content {
+            position: absolute;
+            transform: translate(0%, -50%);
+            top: 0;
+            display: flex;
+            align-items: end;
+            width: -webkit-fill-available;
+            padding-right: 1em;
+        }
+
+        .title {
+            color: $dark;
+            font-size: 1em;
+            margin-left: 1.2em;
+            padding-bottom: .6em;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; 
+        }
+    }
+
+    .footer {
+        background-color: $light;
+        padding: 1em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-radius: 0 0 8px 8px;
+
+        &>div {
+            display: flex;
+            align-items: center;
+        }
+
+        .info {
+            svg {
+                vertical-align: bottom;
+                height: 18px;
+            }
+
+            span {
+                margin-left: .4em;
+                font-size: 0.8em;
+
+                &.porcent::after {
+                    content: '%';
+                    margin-left: .1em;
+                }
+            }
+
+            &:not(:first-child) {
+                margin-left: 1.2em;
+            }
+        }
+    }
+}
+
+.avatar {
+    width: 4em;
+    border: 4px solid $light;
+    border-radius: 50%;
+}
+
+.progress {
+    height: .4rem;
+    width: 100%;
+    background-color: $dark;
+
+    .porcent {
+        height: 100%;
+    }
+}

@@ -1,0 +1,42 @@
+.btn-group {
+    button:not(:last-child) {
+        margin-right: .8em;
+    }
+}
+
+button {
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    min-width: 64px;
+
+    &.primary {
+        color: $light;
+        background-color: $primary;
+        border: 1px solid $primary;
+
+        &:hover {
+            background-color: darken($color: $primary, $amount: 10%);
+        }
+
+        &:active {
+            background-color: darken($color: $primary, $amount: 20%);
+        }
+    }
+
+    &.secondary {
+        color: $primary;
+        border: 1px solid $primary;
+        background-color: $light;
+
+        &:hover {
+            color: $light;
+            background-color: $primary;
+        }
+
+        &:active {
+            background-color: darken($color: $primary, $amount: 20%);
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.profile {
+    @include shadow;
+
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.2em 1em;
+    border-radius: 0 0 8px 8px;
+
+    .profile_avatar {
+        height: 64px;
+        width: 64px;
+        border-radius: 50%;
+        background-color: $primary;
+        text-align: center;
+        @media (min-width: 768px) {
+            height: 128px;
+            width: 128px;
+        }
+
+        .profile_letter {
+            font-size: 4em;
+            color: $light;
+            line-height: 64px;
+            @media (min-width: 768px) {
+                font-size: 6em;
+                line-height: 128px;
+            }
+        }
+    }
+
+    .profile_info {
+        margin-left: 1.2em;
+        ul {
+            margin-bottom: .8em;
+
+            li {
+                list-style: none;
+                padding: .4em;
+                font-size: 0.8em;
+                @media (min-width: 768px) {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}

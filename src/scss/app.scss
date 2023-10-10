@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+// vars
+@import './colors';
+
+// mixins
+@import './mixin/shadow';
+
+// Components
+@import './container';
+@import './button';
+@import './card';
+@import './profile';
+
+@import './loading';
